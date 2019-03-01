@@ -1,0 +1,145 @@
+<div class="module-body table">
+    <div  id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+        <form method="post" class="form-horizontal row-fluid" >
+            <!-- -->
+
+            <!-- -->
+
+            <div style="padding: 5px 15px 5px 15px">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">Genel Bilgiler</a></li>
+                    <li><a data-toggle="tab" href="#menu1">E-Mail Server</a></li>
+                    <li><a data-toggle="tab" href="#menu2">Hakkımızda</a></li>
+                    <li><a data-toggle="tab" href="#menu3">İletişim</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <h3>Genel Bilgiler</h3>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Baslik</label>
+                            <div class="controls">
+                                <input type="text" name="setting[title]" value="{{ setting.title }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Anahtar Kelime</label>
+                            <div class="controls">
+                                <input type="text" name="setting[keywords]" value="{{ setting.keywords }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Açiklama</label>
+                            <div class="controls">
+                                <input type="text" name="setting[description]" value="{{ setting.description }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Firma Adı</label>
+                            <div class="controls">
+                                <input type="text" name="setting[company]" value="{{ setting.company }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Statü</label>
+                            <div class="controls">
+                                <input type="text" name="setting[status]" value="{{ setting.status }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                        <h3>E-Mail Server</h3>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">SMTP Server</label>
+                            <div class="controls">
+                                <input type="text" name="setting[smtpserver]" value="{{ setting.smtpserver }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">SMTP MAil</label>
+                            <div class="controls">
+                                <input type="email" name="setting[smptpmail]" value="{{ setting.smptpmail }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">SMTP Şifre</label>
+                            <div class="controls">
+                                <input type="password" name="setting[smptppassword]" value="{{ setting.smptppassword }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">SMTP Port</label>
+                            <div class="controls">
+                                <input type="text" name="setting[smtpport]" value="{{ setting.smtpport }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="menu2" class="tab-pane fade">
+                        <h3>Hakkımızda</h3>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Detay</label>
+                            <div class="controls">
+                                <textarea name="setting[aboutus]" id="editor1" rows="10" cols="80">
+                                {{ setting.aboutus }}
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Referans</label>
+                            <div class="controls">
+                                <textarea name="setting[referances]" id="editor2" rows="10" cols="80">
+                                {{ setting.referances }}
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="menu3" class="tab-pane fade">
+                        <h3>İletişim</h3>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Telefon</label>
+                            <div class="controls">
+                                <input type="number" name="setting[phone]" value="{{ setting.phone }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Fax</label>
+                            <div class="controls">
+                                <input type="number" name="setting[fax]" value="{{ setting.fax }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">E-Mail</label>
+                            <div class="controls">
+                                <input type="email" name="setting[email]" value="{{ setting.email }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">contact</label>
+                            <div class="controls">
+                                <input type="text" name="setting[contact]" value="{{ setting.contact }}" id="basicinput" placeholder="Type something here..." class="span8">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Adres</label>
+                            <div class="controls">
+                                <textarea name="setting[address]" id="editor3" rows="10" cols="80">
+                                {{ setting.address }}
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <button style="margin-top: 10px" type="submit" class="btn btn-large btn-primary ">Gönder</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+

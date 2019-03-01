@@ -1,0 +1,48 @@
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <div class="sidebar">
+                    <ul class="widget widget-menu unstyled">
+                        <li><a href="{{ path('admin') }}"><i class="menu-icon fas fa-home"></i>Ana Sayfa </a></li>
+                        <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon fas fa-users"></i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Üyeler</a>
+                            <ul id="togglePages" class="collapse unstyled">
+                                <li><a href="{{ path('admin_user_ekle') }}"><i class="icon-fas fa-plus-square"></i>Üye Ekle </a></li>
+                                <li><a href="{{ url('admin') }}/user"><i class="fas fa-user-friends"></i> Üye Listesi </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ path('admin_setting_index') }}"><i class="menu-icon fas fa-cogs"></i>Ayarlar </a></li>
+                        <li><a href="{{ path('admin_messages_index') }}"><i class="menu-icon fas fa-inbox"></i>Gelen Kutusu <b class="label orange pull-right">
+                                    {{ result[0].say }}</b> </a></li>
+                    </ul>
+                    <!--/.widget-nav-->
+
+
+                    <ul class="widget widget-menu unstyled">
+                        <li><a href="{{ path('admin_category_index') }}"><i class="menu-icon fas fa-database"></i> Kategoriler </a></li>
+                        <li><a class="collapsed" data-toggle="collapse" href="#togglePages1"><i class="menu-icon fas fa-truck-moving"></i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Siparişler</a>
+                            <ul id="togglePages1" class="collapse unstyled">
+                                <li><a href="{{ path('admin_orders_index', {'slug':'new'}) }}"><i class="fas fa-external-link-alt"></i> Yeni Siparişler </a></li>
+                                <li><a href="{{ path('admin_orders_index', {'slug':'accepted'}) }}"><i class="fas fa-check-circle"></i> Onaylanan Siparişler</a></li>
+                                <li><a href="{{ path('admin_orders_index', {'slug':'inshipping'}) }}"><i class="fas fa-truck-loading"></i> Kargodaki Siparişler </a></li>
+                                <li><a href="{{ path('admin_orders_index', {'slug':'canceled'}) }}"><i class="fas fa-ban"></i> İptal Edilen </a></li>
+                                <li><a href="{{ path('admin_orders_index', {'slug':'completed'}) }}"><i class="fas fa-thumbs-up"></i> Tamamlanan Siparişler </a></li>
+
+
+                            </ul>
+                        </li>
+                        <li><a href="{{ path('admin_product_index') }}"><i class="menu-icon far fa-list-alt"></i>Ürün Listesi </a></li>
+                    </ul>
+                    <!--/.widget-nav-->
+                    <ul class="widget widget-menu unstyled">
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li><a href="{{ path('app_logout') }}"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+                <!--/.sidebar-->
+            </div>
+            <!--/.span3-->

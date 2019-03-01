@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+{% block title %} Sipariş Ayrıntıları  {% endblock %}
+
+
+    {% block content %}
+
+        <!-- BREADCRUMB -->
+        <div id="breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Sipariş Ayrıntıları</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /BREADCRUMB -->
+
+        <!-- section -->
+        <div class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <form id="checkout-form" class="clearfix">
+
+
+                        <div class="col-md-12">
+                            <div class="order-summary clearfix">
+                                <div class="section-title">
+                                    <h3 class="title">Sipariş Ayrıntıları</h3>
+                                </div>
+                                <table class="shopping-cart-table table">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">Kimin Adına</th>
+                                        <th class="text-center">Adress</th>
+                                        <th class="text-center">Şehir</th>
+                                        <th class="text-center">Telefon</th>
+                                        <th class="text-center">Durum</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td class="text-center"><strong>{{ oders[0].name }}</strong></td>
+                                            <td class="text-center"><strong>{{ oders[0].address }}</strong></td>
+                                            <td class="text-center"><strong>{{ oders[0].city }}</strong></td>
+                                            <td class="text-center"><strong>{{ oders[0].phone }}</strong></td>
+                                            <td class="text-center"><strong>{{ oders[0].status }}</strong></td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /section -->
+
+    {% endblock %}

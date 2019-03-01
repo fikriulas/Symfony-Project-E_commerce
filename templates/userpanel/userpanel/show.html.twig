@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% block title %} Kullanıcı Bilgileri  {% endblock %}
+
+
+    {% block content %}
+
+        <!-- BREADCRUMB -->
+        <div id="breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Kullanıcı Bilgileri</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /BREADCRUMB -->
+
+        <!-- section -->
+        <div class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <form id="checkout-form" class="clearfix">
+                        <div class="col-md-12">
+                            <div class="order-summary clearfix">
+                                <div class="section-title">
+                                    <h3 class="title">Kullanıcı Bilgileri</h3>
+                                    {{ include('flashMessages.html.twig') }}
+                                </div>
+                                <table class="shopping-cart-table table">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">İsim Soyisim</th>
+                                        <th class="text-center">E-Mail</th>
+                                        <th class="text-center">Adres</th>
+                                        <th class="text-center">Şehir</th>
+                                        <th class="text-center">Telefon</th>
+                                        <th class="text-center">Düzenle</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="total text-center">{{ app.user.name }}</td>
+                                        <td class="total text-center">{{ app.user.email }}</td>
+                                        <td class="total text-center">{{ app.user.address }}</td>
+                                        <td class="total text-center">{{ app.user.city }}</td>
+                                        <td class="total text-center">{{ app.user.phone }}</td>
+                                        <td class="total text-center"><a href="{{ path('userpanel_edit') }}"  class="main-btn icon-btn"><i class="fas fa-user-edit"></i></a></td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /section -->
+
+    {% endblock %}

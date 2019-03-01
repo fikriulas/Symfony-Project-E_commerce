@@ -1,0 +1,49 @@
+<div class="module-body table">
+    <div  id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+        <form method="post" class="form-horizontal row-fluid" >
+
+
+            <div class="control-group">
+                <label class="control-label" for="basicinput">İsim</label>
+                <div class="controls">
+                    <input type="text" name="messages[name]" value="{{ message.name }}" id="basicinput" placeholder="Type something here..." class="span8">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="basicinput">E-mail</label>
+                <div class="controls">
+                    <input type="email" name="messages[email]" value="{{ message.email }}" id="basicinput" placeholder="Type something here..." class="span8">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="basicinput">Konu</label>
+                <div class="controls">
+                    <input type="text" name="messages[subject]" value="{{ message.subject }}" id="basicinput" placeholder="Type something here..." class="span8">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="basicinput">Mesaj</label>
+                <div class="controls">
+                    <input type="text" name="messages[message]" value="{{ message.message }}" id="basicinput" placeholder="Type something here..." class="span8">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="basicinput">Yorum</label>
+                <div class="controls">
+                    <input type="text" name="messages[comment]" value="{{ message.comment }}" id="basicinput" placeholder="Type something here..." class="span8">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="basicinput">Statü</label>
+                <div class="controls">
+                    <input type="text" name="messages[status]" value="{{ message.status }}" id="basicinput" placeholder="Type something here..." class="span8">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn btn-large btn-primary ">Gönder</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

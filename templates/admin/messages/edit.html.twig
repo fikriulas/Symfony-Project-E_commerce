@@ -1,0 +1,16 @@
+{% extends 'adminbase.html.twig' %}
+{% block title %} Mesaj Düzenle {% endblock %}
+{% block body %}
+    {% block sidebar %} {{ include ('admin/adminsidebar.html.twig') }} {% endblock %}
+    {% block content %}
+        <a style="margin-left: 15px" href="{{ path('admin_messages_index') }}" class="btn btn-large btn-warning">Listeye Dön</a>
+        <button>{{ include('admin/messages/_delete_form.html.twig') }}</button>
+        <div class="module-body table">
+            <div  id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+                {{ include('admin/messages/_form.html.twig', {'button_label': 'Update'}) }}
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}
+
+

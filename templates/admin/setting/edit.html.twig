@@ -1,0 +1,21 @@
+{% extends 'adminbase.html.twig' %}
+{% block title %} Ürün Düzenle {% endblock %}
+{% block body %}
+    {% block sidebar %} {{ include ('admin/adminsidebar.html.twig') }} {% endblock %}
+    {% block content %}
+        <div class="module-body table">
+            <div style="margin-left: 315px;">
+                {{ include('flashMessages.html.twig') }}
+            </div>
+            <div  id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+                {{ include('admin/setting/_form.html.twig', {'button_label': 'Update'}) }}
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}
+
+
+
+
+
+

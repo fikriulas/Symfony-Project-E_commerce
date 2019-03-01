@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+{% block title %} Siparişi Onayla  {% endblock %}
+
+
+    {% block content %}
+
+        <!-- BREADCRUMB -->
+        <div id="breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Siparişi Onayla</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /BREADCRUMB -->
+
+        <!-- section -->
+        <div class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <form name="order" action="{{ path('orders_new') }}" id="checkout-form" class="clearfix" method="post">
+                        <div class="col-md-6">
+                            <div class="billing-details">
+
+                                <div class="section-title">
+                                    <h3 class="title">Sipariş Detayları</h3>
+                                </div>
+                                <div class="form-group">
+                                    <input class="input" type="text" value="{{ app.user.name }}" name="orders[name]" placeholder="First Name">
+                                </div>
+                                <div class="form-group">
+                                    <input class="input" type="text" value="{{ app.user.address }}" name="orders[address]" placeholder="Address">
+                                </div>
+                                <div class="form-group">
+                                    <input class="input" type="text" value="{{ app.user.city }}" name="orders[city]" placeholder="City">
+                                </div>
+                                <div class="form-group">
+                                    <input class="input" type="tel" value="{{ app.user.phone }}" name="orders[phone]" placeholder="Telephone">
+                                </div>
+
+                            </div>
+                            <div class="pull-right">
+                                <!-- <button class="primary-btn">Place Order</button> -->
+                                <input type="hidden" name="token" value="{{ csrf_token('form-order') }}" />
+                                <input name="_method" value="POST" type="hidden">
+
+                                <button type="submit" class="primary-btn" > Satın Al</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="shiping-methods">
+                                <div class="section-title">
+                                    <h4 class="title">Kargo Seçenekleri</h4>
+                                </div>
+                                <div class="input-checkbox">
+                                    <input type="radio" name="shipping" id="shipping-1" checked>
+                                    <label for="shipping-1">Ücretsiz Gönderim -  $0.00</label>
+                                    <div class="caption">
+                                        <p>Ücretsiz kargo hizmeti gönderim garantisi vermez.</p>
+                                    </div>
+                                </div>
+                                <div class="input-checkbox">
+                                    <input type="radio" name="shipping" id="shipping-2">
+                                    <label for="shipping-2">Standard - $4.00</label>
+                                    <div class="caption">
+                                        <p>Gönderim garantili kargo hizmeti.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="payments-methods">
+                                <div class="section-title">
+                                    <h4 class="title">Payments Methods</h4>
+                                </div>
+                                <div class="input-checkbox">
+                                    <input type="radio" name="payments" id="payments-1" checked>
+                                    <label for="payments-1">Direct Bank Transfer</label>
+                                    <div class="caption">
+                                        <div class="form-group">
+                                            <input class="input" type="text" name="cardNumber" placeholder="Kart Adı Soyadı">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="input" type="text" name="cardskt" placeholder="Son Kullanma Tarihi">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="input" type="text" name="cardCode" placeholder="Güvenlik Kodu">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-checkbox">
+                                    <input type="radio" name="payments" id="payments-2">
+                                    <label for="payments-2">Cheque Payment</label>
+                                    <div class="caption">
+                                        <div class="form-group">
+                                            <input class="input" type="text" name="cardNumber" placeholder="Kart Adı Soyadı">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="input" type="text" name="cardskt" placeholder="Son Kullanma Tarihi">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="input" type="text" name="cardCode" placeholder="Güvenlik Kodu">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-checkbox">
+                                    <input type="radio" name="payments" id="payments-3">
+                                    <label for="payments-3">Paypal System</label>
+                                    <div class="caption">
+                                        <div class="form-group">
+                                            <input class="input" type="text" name="cardNumber" placeholder="Kart Adı Soyadı">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="input" type="text" name="cardskt" placeholder="Son Kullanma Tarihi">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="input" type="text" name="cardCode" placeholder="Güvenlik Kodu">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </form>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /section -->
+
+    {% endblock %}

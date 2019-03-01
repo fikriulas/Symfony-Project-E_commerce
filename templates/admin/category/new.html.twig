@@ -1,0 +1,10 @@
+{% extends 'adminbase.html.twig' %}
+{% block title %} Kategori Ekle {% endblock %}
+{% block body %}
+    {% block sidebar %} {{ include ('admin/adminsidebar.html.twig') }} {% endblock %}
+    {% block content %}
+        {{ include('admin/category/_form.html.twig') }}
+    {% endblock %}
+{% endblock %}
+
+

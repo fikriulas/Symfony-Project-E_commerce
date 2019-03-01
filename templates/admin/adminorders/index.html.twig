@@ -1,0 +1,94 @@
+{% extends 'adminbase.html.twig' %}
+{% block title %} Orders {% endblock %}
+{% block body %}
+    {% block sidebar %} {{ include ('admin/adminsidebar.html.twig') }} {% endblock %}
+    {% block content %}
+<div class="module-body table">
+    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+        <table cellpadding="0" cellspacing="0" border="0"
+               class="datatable-1 table table-bordered table-striped  display dataTable" width="100%"
+               id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 100%;">
+            <thead>
+            <tr role="row">
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending"
+                    style="width: 134px;">ID
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 198px;">User ID
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 182px;">
+                    Amount
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 116px;">
+                    İsim
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 84px;">Adres
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 84px;">Şehir
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 84px;">Telefon
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 84px;">Kargo Durumu
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 84px;">Durum
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 84px;">Aksiyon
+                </th>
+
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th rowspan="1" colspan="1">ID</th>
+                <th rowspan="1" colspan="1">User ID</th>
+                <th rowspan="1" colspan="1">Amount</th>
+                <th rowspan="1" colspan="1">İsim</th>
+                <th rowspan="1" colspan="1">Adres</th>
+                <th rowspan="1" colspan="1">Şehir</th>
+                <th rowspan="1" colspan="1">Telefon</th>
+                <th rowspan="1" colspan="1">Kargo Durumu</th>
+                <th rowspan="1" colspan="1">Durum</th>
+                <th rowspan="1" colspan="1">Aksiyon</th>
+            </tr>
+            </tfoot>
+            <tbody role="alert" aria-live="polite" aria-relevant="all">
+            {% for order in orders %}
+                <tr class="gradeA odd">
+                    <td class="  sorting_1">{{ order.id }}</td>
+                    <td class=" ">{{ order.userid }}</td>
+                    <td class=" ">{{ order.amount }}</td>
+                    <td class="center ">{{ order.name }}</td>
+                    <td class="center ">{{ order.address }}</td>
+                    <td class="center ">{{ order.city }}</td>
+                    <td class="center ">{{ order.phone }}</td>
+                    <td class="center ">{{ order.shipinfo }}</td>
+                    <td class="center ">{{ order.status }}</td>
+                    <td class="center "><a href="{{ path('admin_orders_show', {'id': order.id}) }}"
+                                           class="btn btn-small btn-success">Göster</a>
+                    </td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="dataTables_info" id="DataTables_Table_0_info">Showing 1 to 10 of 57 entries</div>
+        <div class="dataTables_paginate paging_two_button btn-group datatable-pagination"
+             id="DataTables_Table_0_paginate"><a class="paginate_disabled_previous" tabindex="0" role="button"
+                                                 id="DataTables_Table_0_previous"
+                                                 aria-controls="DataTables_Table_0"><span>Previous</span><i
+                        class="icon-chevron-left shaded"></i></a><a class="paginate_enabled_next" tabindex="0"
+                                                                    role="button" id="DataTables_Table_0_next"
+                                                                    aria-controls="DataTables_Table_0"><span>Next</span><i
+                        class="icon-chevron-right shaded"></i></a></div>
+    </div>
+    {% endblock %}
+    {% endblock %}

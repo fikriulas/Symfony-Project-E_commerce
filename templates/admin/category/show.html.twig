@@ -1,0 +1,44 @@
+{% extends 'adminbase.html.twig' %}
+{% block title %} Kategori Detay {% endblock %}
+{% block body %}
+    {% block sidebar %} {{ include ('admin/adminsidebar.html.twig') }} {% endblock %}
+    {% block content %}
+<a style="margin: 0 0 0px 15px" href="{{ path('admin_category_edit', {'id': category.id}) }}" class="btn btn-large btn-success">Düzenle</a>
+        <a style="margin-left: 15px" href="{{ path('admin_category_index') }}" class="btn btn-large btn-warning">Listeye Dön</a>
+        <button>{{ include('admin/category/_delete_form.html.twig') }}</button>
+        <div class="module-body table">
+            <div  id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+                <table style="margin: 0 0 15px 15px" class="table">
+
+                    <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ category.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Parentid</th>
+                        <td>{{ category.parentid }}</td>
+                    </tr>
+                    <tr>
+                        <th>Title</th>
+                        <td>{{ category.title }}</td>
+                    </tr>
+                    <tr>
+                        <th>Keywords</th>
+                        <td>{{ category.keywords }}</td>
+                    </tr>
+                    <tr>
+                        <th>Aciklama</th>
+                        <td>{{ category.aciklama }}</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>{{ category.status }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    {% endblock %}
+    {% endblock %}

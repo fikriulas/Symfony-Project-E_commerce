@@ -1,0 +1,79 @@
+{% extends 'adminbase.html.twig' %}
+{% block title %} Üyeler {% endblock %}
+{% block body %}
+    {% block sidebar %} {{ include ('admin/adminsidebar.html.twig') }} {% endblock %}
+    {% block content %}
+<div class="module-body table">
+    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+        <table cellpadding="0" cellspacing="0" border="0"
+               class="datatable-1 table table-bordered table-striped  display dataTable" width="100%"
+               id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 100%;">
+            <thead>
+            <tr role="row">
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending"
+                    style="width: 134px;">ID
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 198px;">Adı Soyadı
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 182px;">
+                    E-Mail
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 116px;">
+                    Üye Tipi
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 84px;">Telefon
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 84px;">Düzenle
+                </th>
+                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                    colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 84px;">Sil
+                </th>
+
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th rowspan="1" colspan="1">ID</th>
+                <th rowspan="1" colspan="1">Adı Soyadı</th>
+                <th rowspan="1" colspan="1">Mail</th>
+                <th rowspan="1" colspan="1">Üye Tipi</th>
+                <th rowspan="1" colspan="1">Telefon</th>
+                <th rowspan="1" colspan="1">Düzenle</th>
+                <th rowspan="1" colspan="1">Sil</th>
+            </tr>
+            </tfoot>
+            <tbody role="alert" aria-live="polite" aria-relevant="all">
+            {% for user in user %}
+                <tr class="gradeA odd">
+                    <td class="  sorting_1">{{ user.id }}</td>
+                    <td class="center ">{{ user.name }}</td>
+                    <td class=" ">{{ user.email }}</td>
+                    <td class=" ">{{ user.roles|join }}</td>
+                    <td class="center ">{{ user.phone }}</td>
+                    <td class="center "><a href="{{ path('admin_user_update', {'id': user.id}) }}"
+                                           class="btn btn-small btn-success">Düzenle</a></td>
+                    <td class="center "><a href="{{ path('admin_user_delete', {'id': user.id}) }}"
+                                           onclick="return confirm('Emin misiniz?');" class="btn btn-small btn-danger">Sil</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="dataTables_info" id="DataTables_Table_0_info">Showing 1 to 10 of 57 entries</div>
+        <div class="dataTables_paginate paging_two_button btn-group datatable-pagination"
+             id="DataTables_Table_0_paginate"><a class="paginate_disabled_previous" tabindex="0" role="button"
+                                                 id="DataTables_Table_0_previous"
+                                                 aria-controls="DataTables_Table_0"><span>Previous</span><i
+                        class="icon-chevron-left shaded"></i></a><a class="paginate_enabled_next" tabindex="0"
+                                                                    role="button" id="DataTables_Table_0_next"
+                                                                    aria-controls="DataTables_Table_0"><span>Next</span><i
+                        class="icon-chevron-right shaded"></i></a></div>
+    </div>
+    {% endblock %}
+    {% endblock %}

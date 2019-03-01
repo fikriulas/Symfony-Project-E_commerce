@@ -1,0 +1,17 @@
+{% extends 'adminbase.html.twig' %}
+{% block title %} Kategori Düzenle {% endblock %}
+{% block body %}
+    {% block sidebar %} {{ include ('admin/adminsidebar.html.twig') }} {% endblock %}
+    {% block content %}
+        <a style="margin-left: 15px" href="{{ path('admin_category_index') }}" class="btn btn-large btn-warning">Listeye Dön</a>
+        <div class="module-body table">
+            <div  id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+                {{ include('admin/category/_form.html.twig', {'button_label': 'Update'}) }}
+                {{ include('admin/category/_delete_form.html.twig') }}
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}
+
+
+

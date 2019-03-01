@@ -1,0 +1,94 @@
+<div class="span9">
+    <div class="content">
+        <div class="btn-controls">
+            <div class="btn-box-row row-fluid">
+                <a href="{{ path('admin_category_index') }}" class="btn-box big span4"><i class="fas fa-database"></i><b>{{ resultcat[0].say }}</b>
+                    <p class="text-muted">
+                        Adet Kategori</p>
+                </a><a href="{{ url('admin') }}/user" class="btn-box big span4"><i class="icon-user"></i><b>{{ resultuye[0].say }}</b>
+                    <p class="text-muted">
+                        Toplam Üye Sayısı</p>
+                </a><a href="{{ path('admin_orders_index', {'slug':'new'}) }}" class="btn-box big span4"><i class="icon-money"></i><b>{{ resultorder[0].say }}</b>
+                    <p class="text-muted">
+                        Adet Sipariş</p>
+                </a>
+            </div>
+            <div class="btn-box-row row-fluid">
+                <div class="span8">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <a href="{{ path('admin_orders_index', {'slug':'new'}) }}" class="btn-box small span4"><i class="fas fa-external-link-alt"></i><b>Yeni Siparişler</b>
+                            </a><a href="{{ path('admin_orders_index', {'slug':'accepted'}) }}" class="btn-box small span4"><i class="fas fa-check-circle"></i><b>Onaylanan Siparişler</b>
+                            </a><a href="{{ path('admin_orders_index', {'slug':'inshipping'}) }}" class="btn-box small span4"><i class="fas fa-truck-loading"></i><b>Kargodaki Siparişler</b>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <a href="{{ path('admin_orders_index', {'slug':'canceled'}) }}" class="btn-box small span4"><i class="fas fa-ban"></i><b>İptal Edilen Siparişler</b>
+                            </a><a href="{{ path('admin_orders_index', {'slug':'completed'}) }}" class="btn-box small span4"><i class="fas fa-thumbs-up"></i><b>Tamamlanan Siparişler</b>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="widget widget-usage unstyled span4">
+                    <li>
+                        <p>
+                            <strong>Yeni Siparişler</strong> <span class="pull-right small muted">{{ resultnew[0].say }}</span>
+                        </p>
+                        <div class="progress tight">
+                            <div class="bar" style="width: {{ resultnew[0].say }}%;">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Onaylanan Siparişler</strong> <span class="pull-right small muted">{{ resultAccepted[0].say }}</span>
+                        </p>
+                        <div class="progress tight">
+                            <div class="bar bar-info" style="width: {{ resultAccepted[0].say }}%;">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Kargodaki Siparişler</strong> <span class="pull-right small muted">{{ resultInShipping[0].say }}</span>
+                        </p>
+                        <div class="progress tight">
+                            <div class="bar bar-warning" style="width: {{ resultInShipping[0].say }}%;">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>İptal Edilen Siparişler</strong> <span class="pull-right small muted">{{ resultCanceled[0].say }}</span>
+                        </p>
+                        <div class="progress tight">
+                            <div class="bar bar-danger" style="width: {{ resultCanceled[0].say }}%;">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Tamamlanan Siparişler</strong> <span class="pull-right small muted">{{ resultcompleted[0].say }}</span>
+                        </p>
+                        <div class="progress tight">
+                            <div class="bar bar-success" style="width: {{ resultcompleted[0].say }}%;">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--/#btn-controls-->
+
+        <!--/.module-->
+    </div>
+    <!--/.content-->
+</div>
+<!--/.span9-->
+</div>
+</div>
+<!--/.container-->
+</div>
+<!--/.wrapper-->

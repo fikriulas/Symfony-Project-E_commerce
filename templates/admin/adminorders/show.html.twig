@@ -1,0 +1,76 @@
+{% extends 'adminbase.html.twig' %}
+{% block title %} Order Detay {% endblock %}
+{% block body %}
+    {% block sidebar %} {{ include ('admin/adminsidebar.html.twig') }} {% endblock %}
+    {% block content %}
+<div class="module-body table">
+    <div style="margin-left:315px">{{ include('flashMessages.html.twig') }}</div>
+    <div  id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+
+        <table style="margin: 0 0 15px 15px" class="table">
+
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ order.id }}</td>
+            </tr>
+            <tr>
+                <th>User ID</th>
+                <td>{{ order.userid }}</td>
+            </tr>
+            <tr>
+                <th>Miktar</th>
+                <td>{{ order.amount }}</td>
+            </tr>
+            <tr>
+                <th>İsim Soyisim</th>
+                <td>{{ order.name }}</td>
+            </tr>
+            <tr>
+                <th>Şehir</th>
+                <td>{{ order.city }}</td>
+            </tr>
+            <tr>
+                <th>Telefon</th>
+                <td>{{ order.phone }}</td>
+            </tr>
+            <form action="{{ path('admin_orders_update', {'id':order.id}) }}" method="post">
+                <tr>
+                    <th>Kargo Durumu</th>
+                    <td><textarea name="shipinfo" cols="100" rows="3">{{ order.shipinfo }}</textarea></td>
+                </tr>
+                <tr>
+                    <th>Durum</th>
+                    <td>
+                        <div class="controls">
+                            <select name="status" tabindex="1" data-placeholder="Select here.." class="span8">
+                                <option value="{{ order.status }}">{{ order.status }}</option>
+                                <option value="Accepted">Accepted</option>
+                                <option value="InShipping">InShipping</option>
+                                <option value="Canceled">Canceled</option>
+                                <option value="New">New</option>
+                                <option value="completed">completed</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Not</th>
+                    <td><textarea name="note" cols="100" rows="3">{{ order.note }}</textarea></td>
+                </tr>
+
+
+            </tbody>
+        </table>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-large btn-primary ">Güncelle</button>
+            </div>
+        </div>
+
+        </form>
+    </div>
+
+        {% endblock %}
+        {% endblock %}
+

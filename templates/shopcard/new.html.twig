@@ -1,0 +1,10 @@
+
+{% block title %}New Shopcard{% endblock %}
+
+{% block body %}
+    <h1>Create new Shopcard</h1>
+
+    {{ include('shopcard/_form.html.twig') }}
+
+    <a href="{{ path('shopcard_index') }}">back to list</a>
+{% endblock %}

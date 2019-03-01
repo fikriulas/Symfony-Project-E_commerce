@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block title %} Referanslar - {{ data[0].title }} {% endblock %}
+
+
+    {% block content %}
+
+        <!-- BREADCRUMB -->
+        <div id="breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="{{ path('home') }}">Ana Sayfa</a></li>
+                    <li class="active">Referanslar</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /BREADCRUMB -->
+
+        <!-- section -->
+        <div class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    {{ data[0].referances|raw }}
+
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /section -->
+
+    {% endblock %}

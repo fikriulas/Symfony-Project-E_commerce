@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+{% block title %} İletisim {{ data[0].title }} {% endblock %}
+
+
+    {% block content %}
+
+        <!-- BREADCRUMB -->
+        <div id="breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="{{ path('home') }}">Ana Sayfa</a></li>
+                    <li class="active">İletişim</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /BREADCRUMB -->
+
+        <!-- section -->
+        <div class="section">
+            <!-- container -->
+            <div class="container" method="post">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-7">
+                        <table class="iletisimtable">
+                            <tr>
+                                <th >Adres:</th>
+                                <td>{{ data[0].address|raw }}</td>
+                            </tr>
+                            <tr>
+                                <th>Telefon:</th>
+                                <td >{{ data[0].phone|raw }}</td>
+                            </tr>
+                            <tr>
+                                <th>Fax:</th>
+                                <td>{{ data[0].fax }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-5">
+                        <p></p>
+                    </div>
+
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /section -->
+
+    {% endblock %}
